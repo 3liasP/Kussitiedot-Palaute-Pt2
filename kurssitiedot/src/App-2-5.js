@@ -1,5 +1,5 @@
 import Course from './components/Course'
-
+// Uses and imports component Course as it's own module
 // Main component
 const App = () => {
   const courses = [

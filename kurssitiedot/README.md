@@ -9,15 +9,21 @@
 - `App.js` ja `Index.js` ovat aina ajankohtaisia versioita!
 
 ### Tehtävä 2.1: kurssitiedot step6
-- Aloitetaan nyt!
+- Valmis ongelmitta
+- Tiedostossa `App-2-1.js`
 
-### Tehtävä 2
+### Tehtävä 2.2 ja 2.3: kurssitiedot step7 ja step8
+- Valmis ongelmitta
+- `recude`-metodia käytetty jo vaiheessa 2.2, joten `App-2-2.js` sisältää molempien 2.2 ja 2.3 vastaukset
+- Sijainti siis tiedostossa `App-2-2.js`
 
+### Tehtävä 2.4: kurssitiedot step9
+- Valmis ongelmitta
+- Komponentti `Course` ei ole vielä oma moduulinsa
+- Tiedostossa `App-2-4.js`
 
-### Tehtävä 3
+### Tehtävä 2.5 kurssitiedot valmis
+- Valmis ongelmitta
+- Komponentti `Course` omana moduulinaan sijainnissa `./components/Course.js`
+- Tiedostossa `App-2-5.js` (ja `App.js`)
 
-
-### Tehtävä 4
-
-
-### Tehtävä 5
