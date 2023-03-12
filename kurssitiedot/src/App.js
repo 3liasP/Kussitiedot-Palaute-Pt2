@@ -1,77 +1,84 @@
-const Header = (props) => {
+// Component that gathers everything together
+const Course = ({ course }) => {
   return (
     <div>
-      <h1>{props.course}</h1>
+      <Header name={course.name} />
+      <Content parts={course.parts} />
+      <Total parts={course.parts} />
     </div>
   )
 }
 
-const Content = (props) => {
-  const names = []
-  const exs = []
-  const parts = props.parts
-  for (const element of parts) {
-    names.push(element.name);
-    exs.push(element.exercises);
-  }
+// Component that displays the header of the course
+const Header = ({ name }) => {
+  return (
+    <h2>{name}</h2>
+  )
+}
+
+// Component that displays the content of the course
+const Content = ({ parts }) => {
   return (
     <div>
-      <Part pt={names[0]} ex={exs[0]} />
-      <Part pt={names[1]} ex={exs[1]} />
-      <Part pt={names[2]} ex={exs[2]} />
+      {parts.map(part =>
+        <Part key={part.id} part={part} />
+      )}
     </div>
   )
 }
 
-const Part = (props) => {
+// Component that displays one part of the course
+const Part = ({ part }) => {
   return (
-  <div>
     <p>
-      {props.pt} {props.ex}
+      {part.name} {part.exercises}
     </p>
-  </div>
   )
 }
 
-const Total = (props) => {
-  const exs = []
-  const parts = props.parts
-  for (const element of parts) {
-    exs.push(element.exercises);
-  }
+// Component that displays the total nunber of the excercises
+const Total = ({ parts }) => {
+  const total =  parts.reduce( (cB,cV) => cB + cV.exercises, 0)
   return (
-  <div>
-    <p>Number of exercises {exs[0] + exs[1] + exs[2]}</p>
-  </div>
+    <h4>
+      total of {total} excercises
+    </h4>
   )
 }
 
 const App = () => {
   const course = {
     name: 'Half Stack application development',
+    id: 1,
     parts: [
       {
         name: 'Fundamentals of React',
-        exercises: 10
+        exercises: 10,
+        id: 1
       },
       {
-        name: 'Using props to pass data',
-        exercises: 7
+        name: 'Using props that pass data',
+        exercises: 7,
+        id: 2
       },
       {
         name: 'State of a component',
-        exercises: 14
+        exercises: 14,
+        id: 3
+      },
+      {
+        name: 'Redux',
+        exercises: 11,
+        id: 4
       }
     ]
   }
 
-return (
-  <div>
-    <Header course={course.name} />
-    <Content parts={course.parts} />
-    <Total parts={course.parts} />
-  </div>
-)
+  return (
+    <div>
+      <Course course={course} />
+    </div>
+  )
 }
 
 export default App
